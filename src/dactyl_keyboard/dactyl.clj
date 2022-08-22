@@ -65,7 +65,7 @@
 
 ; If you use Cherry MX or Gateron switches, this can be turned on.
 ; If you use other switches such as Kailh, you should set this as false
-(def create-side-nubs? false)
+(def create-side-nubs? true)
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; General variables ;;
@@ -788,11 +788,11 @@
        (translate [-13 -9.8 4])))
 (defn cfthumb-tr-place [shape]
   (->> shape
-       (rotate (deg2rad  6) [1 0 0])
+       (rotate (deg2rad  10) [1 0 0])
        (rotate (deg2rad -24) [0 1 0])
        (rotate (deg2rad  10) [0 0 1])
        (translate thumborigin)
-       (translate [-7.5 -29.5 0])))
+       (translate [-7.5 -29.5 0.5])))
 (defn cfthumb-ml-place [shape]
   (->> shape
        (rotate (deg2rad  8) [1 0 0])
@@ -802,18 +802,18 @@
        (translate [-30.5 -17 -6])))
 (defn cfthumb-mr-place [shape]
   (->> shape
-       (rotate (deg2rad  4) [1 0 0])
+       (rotate (deg2rad  8) [1 0 0])
        (rotate (deg2rad -31) [0 1 0])
        (rotate (deg2rad  14) [0 0 1])
        (translate thumborigin)
-       (translate [-22.2 -41 -10.3])))
+       (translate [-22.2 -41 -9.2])))
 (defn cfthumb-br-place [shape]
   (->> shape
-       (rotate (deg2rad   2) [1 0 0])
+       (rotate (deg2rad  6) [1 0 0])
        (rotate (deg2rad -37) [0 1 0])
        (rotate (deg2rad  18) [0 0 1])
        (translate thumborigin)
-       (translate [-37 -46.4 -22])))
+       (translate [-37 -46.4 -21.5])))
 (defn cfthumb-bl-place [shape]
   (->> shape
        (rotate (deg2rad   6) [1 0 0])
@@ -1435,7 +1435,7 @@
                (key-place lastcol (inc row) web-post-tr))))
 ))))
 
-(def model-right (difference
+(def model-rmight (difference
                    (union
                      key-holes
                      key-holes-inner
